@@ -1,5 +1,5 @@
 /*
-1)Fai un programa que lea unha cadena e a devolva o revés.
+1)Fai un programa que lea unha cadena e a devolva o revés..
 */
 package pilas;
 

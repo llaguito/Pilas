@@ -1,5 +1,5 @@
 /*
-2)Fai un programa que mire si un numero e capicúa.
+2)Fai un programa que mire si un numero e capicúa..
 */
 package pilas;
 
