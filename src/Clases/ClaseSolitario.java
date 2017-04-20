@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Stack;
 
 /**
- *
+ * Clase para el programa Solitario
  * @autor Santiago Losada Borrajo
  */
 public class ClaseSolitario {

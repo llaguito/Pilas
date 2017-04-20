@@ -7,11 +7,14 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- *
+ * Programa que cumple con el ejercicio 2
  * @autor Santiago Losada Borrajo
  */
 public class Exercicio2 {
-
+    /**
+     * 
+     * @param args 
+     */
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         int numero;

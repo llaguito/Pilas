@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- *
+ * Programa que cumple con el ejercicio 1
  * @autor Santiago Losada Borrajo
  */
 public class Exercicio1 {

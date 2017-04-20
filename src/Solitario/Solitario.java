@@ -5,11 +5,15 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- *
+ * Programa que desarrolla la funcion de un solitario automatico
  * @autor Santiago Losada Borrajo
  */
 public class Solitario {
 
+    /**
+     * Programa que desarrolla la funcion de un solitario automatico
+     * @param args Paarametros necesarios para inicializar el programa.
+     */
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         ClaseSolitario baraja = new ClaseSolitario();
@@ -77,7 +81,7 @@ public class Solitario {
                 }
             }
             
-            System.out.print("\nLa barajas esta asi ahora mismo :\nQuedan "+residuo.capacidad()+" cartas en el mazo.\nEn las copas tenemos la siguiente carta: "+cartas[copas.peek()]+"\nEn los oros tenemos la siguiente carta: "+cartas[oros.peek()]+"\nEn los bastos tenemos la siguiente carta: "+cartas[bastos.peek()]+"\nEn las espadas tenemos la siguiente carta: "+cartas[espadas.peek()]);
+            System.out.print("\nLa barajas esta asi ahora mismo :\nQuedan "+residuo.capacidad()+" cartas en el mazo.\nEn las copas tenemos la siguiente carta: \t"+cartas[copas.peek()]+"\nEn los oros tenemos la siguiente carta: \t"+cartas[oros.peek()]+"\nEn los bastos tenemos la siguiente carta: \t"+cartas[bastos.peek()]+"\nEn las espadas tenemos la siguiente carta: \t"+cartas[espadas.peek()]);
             
             if ( residuo.barajaVacia() ) {
                 System.out.print("\nEl juego ha terminado.");
@@ -95,29 +99,9 @@ public class Solitario {
             }
             
             baraja.barajar();
-            
-            
-
+   
         }
         
-        
-                    System.out.print("\n");
-                    while ( !copas.empty() ) {
-                System.out.print(copas.pop()+" ");
-            }
-                    System.out.print("\n");
-                     while ( !oros.empty() ) {
-                System.out.print(oros.pop()+" ");
-            }
-                    System.out.print("\n");
-                                        while ( !bastos.empty() ) {
-                System.out.print(bastos.pop()+" ");
-            }
-                    System.out.print("\n");
-                                        while ( !espadas.empty() ) {
-                System.out.print(espadas.pop()+" ");
-            }
-                    System.out.print("\n");
     }
 
 }
