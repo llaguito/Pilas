@@ -39,26 +39,28 @@ public class Solitario {
             while ( !baraja.barajaVacia() ) {
                 carta = baraja.verTop();
                 
-                switch (carta) {
-                    case 1:
-                        copas.push(baraja.conseguirTop());
-                        break;
+                if ((carta == 1) || (carta == 11) || (carta == 21) || (carta == 31)) {
+                    switch (carta) {
+                        case 1:
+                            copas.push(baraja.conseguirTop());
+                            break;
                     
-                    case 11:
-                        oros.push(baraja.conseguirTop());
-                        break;
+                        case 11:
+                            oros.push(baraja.conseguirTop());
+                            break;
                         
-                    case 21:
-                        bastos.push(baraja.conseguirTop());
-                        break;
+                        case 21:
+                            bastos.push(baraja.conseguirTop());
+                            break;
                         
-                    case 31:
-                        espadas.push(baraja.conseguirTop());
-                        break;
+                        case 31:
+                            espadas.push(baraja.conseguirTop());
+                            break;
                     
+                    }
                 }
                 
-                if ( (carta - 1) == copas.peek()) {
+                else if ( (carta - 1) == copas.peek()) {
                     copas.push(baraja.conseguirTop());
                     }
                 else if ( (carta - 1) == oros.peek()) {
@@ -94,7 +96,28 @@ public class Solitario {
             
             baraja.barajar();
             
+            
+
         }
+        
+        
+                    System.out.print("\n");
+                    while ( !copas.empty() ) {
+                System.out.print(copas.pop()+" ");
+            }
+                    System.out.print("\n");
+                     while ( !oros.empty() ) {
+                System.out.print(oros.pop()+" ");
+            }
+                    System.out.print("\n");
+                                        while ( !bastos.empty() ) {
+                System.out.print(bastos.pop()+" ");
+            }
+                    System.out.print("\n");
+                                        while ( !espadas.empty() ) {
+                System.out.print(espadas.pop()+" ");
+            }
+                    System.out.print("\n");
     }
 
 }
