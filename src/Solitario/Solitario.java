@@ -17,9 +17,10 @@ public class Solitario {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         ClaseSolitario baraja = new ClaseSolitario();
-        System.out.print("\n"+baraja.capacidad());
+        System.out.print("\nTenemos "+baraja.capacidad()+" en la baraja principal.");
         String respuesta;
         int carta;
+        int contadorBarajar = 1;
         String[] cartas = {"nada", "AC", "2C", "3C", "4C", "5C", "6C", "7C", "SC", "CC", "RC", "AO", "2O", "3O", "4O", "5O", "6O", "7O", "SO", "CO", "RO", "AB", "2B", "3B", "4B", "5B", "6B", "7B", "SB", "CB", "RB", "AE", "2E", "3E", "4E", "5E", "6E", "7E", "SE", "CE", "RE"};
         
         //Residuo
@@ -79,12 +80,36 @@ public class Solitario {
                 else {
                     residuo.agregarCarta(baraja.conseguirTop());
                 }
+                
+                
+                //Comprobamos carta TOP del mazo residuo
+                if ( !residuo.barajaVacia() ) {
+                    carta = residuo.verTop();
+                
+                    if ( (carta - 1) == copas.peek()) {
+                        copas.push(residuo.conseguirTop());
+                        System.out.print("\nSe ha colocado la carta "+cartas[copas.peek()]+" del mazo de residuo.");
+                    }
+                    else if ( (carta - 1) == oros.peek()) {
+                        oros.push(residuo.conseguirTop());
+                        System.out.print("\nSe ha colocado la carta "+cartas[oros.peek()]+" del mazo de residuo.");
+                    }
+                    else if ( (carta - 1) == bastos.peek()) {
+                        bastos.push(residuo.conseguirTop());
+                        System.out.print("\nSe ha colocado la carta "+cartas[bastos.peek()]+" del mazo de residuo.");
+                    }
+                    else if ( (carta - 1) == espadas.peek()) {
+                        espadas.push(residuo.conseguirTop());
+                        System.out.print("\nSe ha colocado la carta "+cartas[espadas.peek()]+" del mazo de residuo.");
+                    }
+                }
+                    
             }
             
-            System.out.print("\nLa barajas esta asi ahora mismo :\nQuedan "+residuo.capacidad()+" cartas en el mazo.\nEn las copas tenemos la siguiente carta: \t"+cartas[copas.peek()]+"\nEn los oros tenemos la siguiente carta: \t"+cartas[oros.peek()]+"\nEn los bastos tenemos la siguiente carta: \t"+cartas[bastos.peek()]+"\nEn las espadas tenemos la siguiente carta: \t"+cartas[espadas.peek()]);
+            System.out.print("\nLa barajas están asi ahora mismo :\nQuedan "+residuo.capacidad()+" cartas en el mazo.\nEn las copas tenemos la siguiente carta: \t"+cartas[copas.peek()]+"\nEn los oros tenemos la siguiente carta: \t"+cartas[oros.peek()]+"\nEn los bastos tenemos la siguiente carta: \t"+cartas[bastos.peek()]+"\nEn las espadas tenemos la siguiente carta: \t"+cartas[espadas.peek()]);
             
             if ( residuo.barajaVacia() ) {
-                System.out.print("\nEl juego ha terminado.");
+                System.out.print("\nEl juego ha terminado.\nHas barajado "+contadorBarajar+" veces.");
                 respuesta = "No";
             }
             else {
@@ -99,6 +124,7 @@ public class Solitario {
             }
             
             baraja.barajar();
+            contadorBarajar++;
    
         }
         
